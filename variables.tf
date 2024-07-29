@@ -136,12 +136,6 @@ variable "identity" {
   }
 }
 
-variable "nic_diagnostic_setting_categories" {
-  description = "(Oprtional) Categories for the diagnostic settings of the nic."
-  type = list(string)
-  default = null
-}
-
 variable "log_analytics_workspace_id" {
   description = "(Required) ID of the log analytics workspace to which the diagnostic setting will send the logs of this resource."
   type        = string
