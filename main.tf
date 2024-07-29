@@ -20,7 +20,6 @@ module "diagnostic_setting" {
   name                       = "${azurerm_network_interface.this.name}-diagnostic-setting"
   target_resource_id         = azurerm_network_interface.this.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
-  diagnostic_setting_categories = var.nic_diagnostic_setting_categories
 }
 
 resource "azurerm_linux_virtual_machine" "this" {
