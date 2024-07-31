@@ -81,12 +81,22 @@ variable "os" {
 }
 
 variable "source_linux_image" {
-  description = "(Optional) The source image of the vm."
+  description = "(Optional) The source image of linux vm."
   type        = string
   default     = "ubuntu"
   validation {
     condition     = can(regex("^(ubuntu|CentOS)$", var.source_linux_image))
     error_message = "Invalid operating system. os must be 'ubuntu' or 'CentOS'. Default 'Ubuntu'."
+  }
+}
+
+variable "source_windows_image" {
+  description = "(Optional) The source image of windows vm."
+  type        = string
+  default     = "windows10"
+  validation {
+    condition     = can(regex("^(windows10|windowsServer)$", var.source_linux_image))
+    error_message = "Invalid operating system. os must be 'windows10' or 'windowsServer'. Default 'windows10'."
   }
 }
 
