@@ -97,7 +97,7 @@ resource "azurerm_windows_virtual_machine" "this" {
   }
 
   dynamic "source_image_reference" {
-    for_each = var.source_linux_image == "windows10" ? [1] : []
+    for_each = var.source_windows_image == "windows10" ? [1] : []
     content {
       publisher = local.source_image_publisher.windows10
       offer     = local.source_image_offer.windows10
@@ -107,7 +107,7 @@ resource "azurerm_windows_virtual_machine" "this" {
   }
 
   dynamic "source_image_reference" {
-    for_each = var.source_linux_image == "windowsServer" ? [1] : []
+    for_each = var.source_windows_image == "windowsServer" ? [1] : []
     content {
       publisher = local.source_image_publisher.windowsServer
       offer     = local.source_image_offer.windowsServer
