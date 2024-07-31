@@ -95,7 +95,7 @@ variable "source_windows_image" {
   type        = string
   default     = "windows10"
   validation {
-    condition     = can(regex("^(windows10|windowsServer)$", var.source_linux_image))
+    condition     = can(regex("^(windows10|windowsServer)$", var.source_windows_image))
     error_message = "Invalid operating system. os must be 'windows10' or 'windowsServer'. Default 'windows10'."
   }
 }
